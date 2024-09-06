@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmicX - Idiot Web Developer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #FF0000;
+            --secondary-color: #1A1A1A;
+            --accent-color: #FFFFFF;
+            --text-color: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #000000 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 50%);
+            opacity: 0.1;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--primary-color);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px var(--primary-color); }
+            to { text-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color); }
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .about {
+            background-color: var(--secondary-color);
+        }
+
+        .card {
+            background-color: rgba(255, 0, 0, 0.1);
+            border: 2px solid var(--primary-color);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 0%,
+                rgba(255, 0, 0, 0.1) 50%,
+                transparent 100%
+            );
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-50%) translateY(-50%) rotate(0deg); }
+            100% { transform: translateX(-50%) translateY(-50%) rotate(360deg); }
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            border: 1px solid var(--primary-color);
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+            background-color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3em;
+            }
+
+            .tagline {
+                font-size: 1.2em;
+            }
+
+            .card {
+                padding: 30px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="section hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>CosmicX</h1>
+                <p class="tagline">Idiot Web Developer | UI/UX Enthusiast</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h2>About Me</h2>
+                    <p>Hey there! I'm CosmicX, just your average idiot web developer with a passion for creating somewhat functional websites. I'm not really an expert, but I do my best to turn complex ideas into semi-decent looking web pages.</p>
+                    <p>My specialty? Well, I wouldn't call it expertise, but I enjoy tinkering with user interfaces and animations. I'm constantly trying to keep up with the latest technologies, often failing spectacularly but always learning something new in the process.</p>
+                    <div class="skills">
+                        <span class="skill">HTML5 (mostly)</span>
+                        <span class="skill">CSS3 (kind of)</span>
+                        <span class="skill">JavaScript (barely)</span>
+                        <span class="skill">React (in theory)</span>
+                        <span class="skill">Vue.js (once used it)</span>
+                        <span class="skill">Node.js (heard of it)</span>
+                        <span class="skill">UI/UX Design (I try)</span>
+                        <span class="skill">Responsive Design (sometimes)</span>
+                        <span class="skill">Breaking Things</span>
+                        <span class="skill">Googling Errors</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const skills = document.querySelectorAll('.skill');
+            skills.forEach(skill => {
+                skill.addEventListener('mouseover', () => {
+                    skill.style.transform = `translateY(-5px) rotate(${Math.random() * 10 - 5}deg)`;
+                });
+                skill.addEventListener('mouseout', () => {
+                    skill.style.transform = 'translateY(0) rotate(0deg)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
